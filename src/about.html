@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Rakshak</title>
+    <link rel="icon" type="image/x-icon" href="assets/image/svg/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="assets/font/swap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/media.css">
+</head>
+<body>
+    <!-- ======================= Custom-Cursor ======================= -->
+    <div class="circle-cursor circle-cursor--inner"></div>
+    <div class="circle-cursor circle-cursor--outer"></div>
+    <!-- ======================= Preloader ======================= -->
+    <div id="preloader">
+        <div class="graf">
+            <div class="text_pre">Loading...</div>
+            <div class="droplets">
+                <div class="gota1"></div>
+                <div class="gota2"></div>
+            </div>
+        </div>
+    </div>
+    <!-- ======================= All Section ======================= -->
+    <div id="main-content">
+        <!-- ======================= Header ======================= -->
+        <header>
+            <div class="header_containt d-flex justify-content-between">
+                <a href="index.html" class="logo">
+                    <img src="assets/image/svg/logo.svg" alt="logo">
+                </a>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <nav class="navbar_header">
+                    <ul class="nav">
+                        <li class="sidebar_logo">
+                            <a href="index.html">
+                                <img src="assets/image/svg/logo.svg" alt="logo">
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0)" class="demo_txt">
+                                <p>Home</p>
+                                <img src="assets/image/svg/headerarrow.svg" alt="headerarrow" class="headerarrow">
+                            </a>
+                            <ul class="dropdown_menu">
+                                <li><a href="index.html">Home Solid</a></li>
+                                <li><a href="home_image.html">Home Slider</a></li>
+                                <li><a href="home_video.html">Home Video</a></li>
+                                <li><a href="home_mix.html">Home Mix Slider</a></li>
+                            </ul>
+                        </li>
+                        <li class="bullate">
+                            <img src="assets/image/svg/bullate.svg" alt="bullate">
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0)" class="demo_txt">
+                                <p>Pages</p>
+                                <img src="assets/image/svg/headerarrow.svg" alt="headerarrow" class="headerarrow">
+                            </a>
+                            <ul class="dropdown_menu">
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="process.html">Our Process</a></li>
+                                <li><a href="team.html">Our Team</a></li>
+                                <li><a href="team_details.html">Team Details</a></li>
+                                <li><a href="faq.html">FAQ</a></li>
+                                <li><a href="pricing_plan.html">Pricing Plan</a></li>
+                                <li><a href="appointment.html">Appointment</a></li>
+                                <li><a href="testimonial.html">Testimonial</a></li>
+                                <li><a href="error.html">404 Error</a></li>
+                            </ul>
+                        </li>
+                        <li class="bullate">
+                            <img src="assets/image/svg/bullate.svg" alt="bullate">
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0)" class="demo_txt">
+                                <p>Services</p>
+                                <img src="assets/image/svg/headerarrow.svg" alt="headerarrow" class="headerarrow">
+                            </a>
+                            <ul class="dropdown_menu">
+                                <li><a href="services.html">All Services</a></li>
+                                <li><a href="service_interior.html">Interior Service</a></li>
+                                <li><a href="service_exterior.html">Exterior Service</a></li>
+                                <li><a href="service_commercial.html">Commercial Service</a></li>
+                                <li><a href="service_decorative.html">Decorative Service</a></li>
+                            </ul>
+                        </li>
+                        <li class="bullate">
+                            <img src="assets/image/svg/bullate.svg" alt="bullate">
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0)" class="demo_txt">
+                                <p>Project</p>
+                                <img src="assets/image/svg/headerarrow.svg" alt="headerarrow" class="headerarrow">
+                            </a>
+                            <ul class="dropdown_menu">
+                                <li><a href="project.html">Projects Grid</a></li>
+                                <li><a href="project_masonry.html">Project Masonry</a></li>
+                                <li><a href="project_slider.html">Project Slider</a></li>
+                                <li><a href="project_details.html">Single Project 1</a></li>
+                                <li><a href="project_details_second.html">Single Project 2</a></li>
+                            </ul>
+                        </li>
+                        <li class="bullate">
+                            <img src="assets/image/svg/bullate.svg" alt="bullate">
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0)" class="demo_txt">
+                                <p>Blogs</p>
+                                <img src="assets/image/svg/headerarrow.svg" alt="headerarrow" class="headerarrow">
+                            </a>
+                            <ul class="dropdown_menu">
+                                <li><a href="blog.html">Blog 1</a></li>
+                                <li><a href="blog_details.html">Blog 2</a></li>
+                                <li><a href="blog_details_second.html">Blog 3</a></li>
+                                <li><a href="blog_right_sidebar.html">Right Sidebar</a></li>
+                                <li><a href="blog_left_sidebar.html">Left Sidebar</a></li>
+                            </ul>
+                        </li>
+                        <li class="bullate">
+                            <img src="assets/image/svg/bullate.svg" alt="bullate">
+                        </li>
+                        <li class="drop"><a href="contact.html">Contact</a></li>
+                    </ul>
+                    <div class="bubbles header_button">
+                        <a href="appointment.html" class="d-flex align-items-center">
+                            <p class="text">Book Your Appointment</p>
+                            <img src="assets/image/svg/buttonarrow.svg" alt="buttonarrow" class="button_img">
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- ======================= Hero Section ======================= -->
+        <section class="about_hero_section">
+            <div class="container">
+                <div class="about_content">
+                    <h1 class="about_heading">About Us</h1>
+                    <div class="d-flex about_border">
+                        <div class="border_hero2"></div>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">About Us</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ======================= Who Section ======================= -->
+        <section class="offer_section">
+            <div class="container">
+                <div class="d-flex flex-lg-row flex-column about_call_row">
+                    <div class="about_call_row1 w-100">
+                        <p class="offer_p text-md-start text-center fade_up">WHO HOME RAKSHAK</p>
+                        <h2 class="offer_h2 text-md-start text-center mt-2 fade_up">Turning your vision into reality
+                        </h2>
+                        <p class="about_who_p text-md-start text-center">
+                            Eu ornare ac amet at tempor id sollicitudin. Mi nam faucibus turpis eu feugiat feugiat
+                            aliquet. Ac tristique nibh vulputate convallis elementum risus nisl mus. Amet ornare
+                            suscipit arcu feugiat. Rhoncus varius egestas quis ut vitae elit enim egestas gravida duis
+                            id morbi gravida.
+                        </p>
+                        <div class="d-flex flex-md-row flex-column align-items-center who_right fade_up mt-0">
+                            <img src="assets/image/svg/who_img.svg" alt="who_img" class="flip_left">
+                            <div>
+                                <h3 class="who_h3 text-md-start text-center">Proudly Awarded & Honored</h3>
+                                <p class="who_ptxt2 text-md-start text-center">
+                                    Proudly honored with numerous awards that celebrate our commitment
+                                    to industry excellence and reflect our unwavering dedication.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="about_border1"></div>
+                        <div class="d-flex flex-md-row flex-column align-items-center who_right fade_up mt-0">
+                            <img src="assets/image/svg/who_img.svg" alt="who_img" class="flip_left">
+                            <div>
+                                <h3 class="who_h3 text-md-start text-center">Work We've Delivered</h3>
+                                <p class="who_ptxt2 text-md-start text-center">
+                                    Our versatile portfolio showcases our skill across projects of all sizes, reflecting
+                                    our strong dedication to excellence.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex about_flex">
+                        <div class="about_flex_img1 d-flex flex-column">
+                            <img src="assets/image/about/about1.jpg" alt="about1"
+                                class="about_img img-animation-style3 reveal">
+                            <div class="about_call d-flex align-items-center ms-auto me-auto">
+                                <div
+                                    class="about_help_img rounded-circle d-flex align-items-center justify-content-center">
+                                    <img src="assets/image/svg/whohelp.svg" alt="whohelp">
+                                </div>
+                                <div>
+                                    <p class="about_p_txt">Call For Booking</p>
+                                    <a href="tel:12483578866" class="about_p_txt1">+1 (248) 357 8866</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex about_flex_img flex-column position-relative">
+                            <img src="assets/image/svg/about_brush.svg" alt="about_brush"
+                                class="position-absolute about_brush">
+                            <img src="assets/image/about/about2.jpg" alt="about2"
+                                class="about_img about_img1 img-animation-style1 reveal">
+                            <img src="assets/image/about/about3.jpg" alt="about3"
+                                class="about_img img-animation-style2 reveal">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ======================= Conter Section ======================= -->
+        <section class="counter_section">
+            <div class="container">
+                <h2 class="d-none">counter</h2>
+                <div class="counter_part d-flex justify-content-between">
+                    <div class="counter-item">
+                        <p class="counter-label">Happy Clients</p>
+                        <div class="counter" data-target="2567"></div>
+                    </div>
+                    <div class="counter-item mt-sm-0 mt-3">
+                        <p class="counter-label">Projects</p>
+                        <div class="counter" data-target="3548"></div>
+                    </div>
+                    <div class="counter-item mt-md-0 mt-sm-4 mt-3">
+                        <p class="counter-label">Years</p>
+                        <div class="counter" data-target="7" data-plus="+"></div>
+                    </div>
+                    <div class="counter-item  mt-md-0 mt-sm-4 mt-3">
+                        <p class="counter-label">Coffee Cups</p>
+                        <div class="counter" data-target="1293"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ======================= Itwork Section ======================= -->
+        <section class="chhose_section position-relative">
+            <img src="assets/image/svg/about_balty.svg" alt="about_balty" class="position-absolute about_balty">
+            <div class="container position-relative">
+                <img src="assets/image/home/it_work.png" alt="it_work" class="it_work position-absolute">
+                <p class="offer_p text-center fade_up">How it works</p>
+                <h2 class="offer_h21 w-100 text-center mt-2 fade_up">Enjoy Sparkling Clean in Just 3 Easy Steps</h2>
+                <p class="it_work_ptxt w-100">
+                    At amet in adipiscing hac suspendisse. Laoreet sit consectetur donec odio ornare elementum
+                    pellentesque. Ante gravida netus dignissim sed tristique mauris egestas egestas aenean turpis id
+                    eget.
+                </p>
+                <div class="d-flex itwork_row justify-content-center mt-60">
+                    <div class="itwork_box d-flex flex-column justify-content-center align-items-center">
+                        <div class="itwork_img d-flex align-items-center justify-content-center rounded-circle">
+                            <img src="assets/image/svg/itwork1.svg" alt="itwork1" class="flip_left">
+                        </div>
+                        <h3 class="itwork_h3 fade_up">Expert Guidance Session</h3>
+                        <p class="itwork_p">
+                            Rule first third above first tree saw Grass subdue great eep saying forth rule hath to the
+                            replenish.
+                        </p>
+                    </div>
+                    <div class="itwork_box1">
+                        <img src="assets/image/svg/itwork2.svg" alt="itwork2" class="itwork2">
+                    </div>
+                    <div class="itwork_box d-flex flex-column justify-content-center align-items-center">
+                        <div class="itwork_img d-flex align-items-center justify-content-center rounded-circle">
+                            <img src="assets/image/svg/itwork3.svg" alt="itwork1" class="flip_left">
+                        </div>
+                        <h3 class="itwork_h3 fade_up">Budget-Friendly Plans</h3>
+                        <p class="itwork_p">
+                            Quam nulla maecenas aliquam non erat auctor tristique. Ut quis quam donec cum. Eu sed ante
+                            scelerisque massa.
+                        </p>
+                    </div>
+                    <div class="itwork_box1">
+                        <img src="assets/image/svg/itwork2.svg" alt="itwork2" class="itwork2">
+                    </div>
+                    <div class="itwork_box d-flex flex-column justify-content-center align-items-center">
+                        <div class="itwork_img d-flex align-items-center justify-content-center rounded-circle">
+                            <img src="assets/image/svg/itwork4.svg" alt="itwork1" class="flip_left">
+                        </div>
+                        <h3 class="itwork_h3 fade_up">Always On Time</h3>
+                        <p class="itwork_p">
+                            Urna praesent fusce risus pellentesque odio. Eget nulla volutpat proin sagittis lacus ornare
+                            sagittis risus.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ======================= Wedo Section ======================= -->
+        <section class="offer_section">
+            <div class="container">
+                <div class="wedo_row d-flex flex-lg-row flex-column-reverse">
+                    <div class="wedo_row2 w-100">
+                        <img src="assets/image/about/wedo_img.jpg" alt="wedo_img"
+                            class="wedo_img img-animation-style1 reveal w-100">
+                    </div>
+                    <div class="wedo_row1 w-100">
+                        <p class="offer_p text-md-start text-center fade_up">WHAT WE DO</p>
+                        <h2 class="offer_h2 text-md-start text-center mt-2 fade_up">Why Everyone Loves Our Solutions
+                        </h2>
+                        <p class="about_who_p text-md-start text-center">
+                            We’re reshaping tomorrow by crafting next-gen products, brands, and services—driven by
+                            innovation, creativity, and a bold hybrid perspective.
+                        </p>
+                        <div class="baby_row flex-md-row flex-column d-flex align-items-center">
+                            <img src="assets/image/svg/wedo1.svg" alt="wedo1" class="flip_left">
+                            <h3 class="wedo_h3 text-center fade_up">Certified PDCA Member</h3>
+                        </div>
+                        <p class="wedo_p_txt text-md-start text-center">
+                            Lorem ipsum dolor sit amet consectetur. Sollicitudin a a vitae pretium. Nisl egestas mi
+                            aenean augue aliquet lectus duis velit eros..
+                        </p>
+                        <div class="about_border1"></div>
+                        <div class="baby_row d-flex flex-md-row flex-column align-items-center">
+                            <img src="assets/image/svg/wedo2.svg" alt="wedo1" class="flip_left">
+                            <h3 class="wedo_h3 text-center fade_up">Adaptable Scheduling Plans</h3>
+                        </div>
+                        <p class="wedo_p_txt text-md-start text-center">
+                            Nunc tincidunt tincidunt dignissim nam risus vitae convallis nulla tristique lacus auctor.
+                            Lorem ipsum dolor sit amet consectetur.
+                        </p>
+                        <div class="about_border1"></div>
+                        <div class="baby_row d-flex flex-md-row flex-column align-items-center">
+                            <img src="assets/image/svg/wedo3.svg" alt="wedo1" class="flip_left">
+                            <h3 class="wedo_h3 text-center fade_up">Green Living & Pure Spaces</h3>
+                        </div>
+                        <p class="wedo_p_txt text-md-start text-center">
+                            Risus ullamcorper commodo lorem ipsum dolor sit amet consectetur. Aliquam mauris adipiscing
+                            lacus ipsum tortor laoreet.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ======================= Meet Section ======================= -->
+        <section class="meet_section">
+            <div class="container">
+                <div class="offer_section">
+                    <div class="d-flex align-items-center justify-content-between flex-xxl-row flex-column">
+                        <h2 class="meet_h2 text-xxl-start text-center  w-100 fade_up">
+                            Schedule an appointment to meet or email us your questions
+                        </h2>
+                        <div class="meet_button d-flex flex-sm-row flex-column mt-xxl-0 mt-xl-5 mt-4">
+                            <div>
+                                <a href="appointment.html">
+                                    <div class="bubbles d-flex align-items-center">
+                                        <p class="text">Request A Quote</p>
+                                        <img src="assets/image/svg/buttonarrow.svg" alt="buttonarrow"
+                                            class="button_img">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="second_btn">
+                                <a href="contact.html">
+                                    <div class="bubbles1 d-flex align-items-center">
+                                        <p class="text">Contact Us</p>
+                                        <img src="assets/image/svg/buttonarrow.svg" alt="buttonarrow"
+                                            class="button_img">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ======================= Work Section ======================= -->
+        <section class="work_section">
+            <p class="offer_p fade_up text-center">OUR works</p>
+            <h2 class="offer_h2 text-center fade_up mt-2">Recent Completed Projects</h2>
+            <div class="work_slider swiper mt-60">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="project_details.html">
+                            <div class="work_box">
+                                <img src="assets/image/home/work1.jpg" alt="work"
+                                    class="work_img img-animation-style1 reveal">
+                                <div class="work_overlay">
+                                    <h3 class="work_h3">Home Area</h3>
+                                    <p class="work_ptxt">Painting</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="project_details.html">
+                            <div class="work_box">
+                                <img src="assets/image/home/work2.jpg" alt="work"
+                                    class="work_img img-animation-style2 reveal">
+                                <div class="work_overlay">
+                                    <h3 class="work_h3">Swimming Pool Area</h3>
+                                    <p class="work_ptxt">Painting</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="project_details.html">
+                            <div class="work_box">
+                                <img src="assets/image/home/work3.png" alt="work"
+                                    class="work_img img-animation-style1 reveal">
+                                <div class="work_overlay">
+                                    <h3 class="work_h3">Kids Room Area</h3>
+                                    <p class="work_ptxt">Painting</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="project_details.html">
+                            <div class="work_box">
+                                <img src="assets/image/home/work4.jpg" alt="work"
+                                    class="work_img img-animation-style2 reveal">
+                                <div class="work_overlay">
+                                    <h3 class="work_h3">Cafe Area</h3>
+                                    <p class="work_ptxt">Painting</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="project_details.html">
+                            <div class="work_box">
+                                <img src="assets/image/home/work5.jpg" alt="work"
+                                    class="work_img img-animation-style2 reveal">
+                                <div class="work_overlay">
+                                    <h3 class="work_h3">Office Area</h3>
+                                    <p class="work_ptxt">Painting</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="project_details.html">
+                            <div class="work_box">
+                                <img src="assets/image/home/work6.jpg" alt="work"
+                                    class="work_img img-animation-style2 reveal">
+                                <div class="work_overlay">
+                                    <h3 class="work_h3">Building Area</h3>
+                                    <p class="work_ptxt">Painting</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="project_details.html">
+                            <div class="work_box">
+                                <img src="assets/image/home/work7.jpg" alt="work"
+                                    class="work_img img-animation-style2 reveal">
+                                <div class="work_overlay">
+                                    <h3 class="work_h3">House Area</h3>
+                                    <p class="work_ptxt">Painting</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="project_details.html">
+                            <div class="work_box">
+                                <img src="assets/image/home/work8.jpg" alt="work"
+                                    class="work_img img-animation-style2 reveal">
+                                <div class="work_overlay">
+                                    <h3 class="work_h3">Water Tank Area</h3>
+                                    <p class="work_ptxt">Painting</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="project_details.html">
+                            <div class="work_box">
+                                <img src="assets/image/home/work9.jpg" alt="work"
+                                    class="work_img img-animation-style2 reveal">
+                                <div class="work_overlay">
+                                    <h3 class="work_h3">Paint Area</h3>
+                                    <p class="work_ptxt">Painting</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="project_details.html">
+                            <div class="work_box">
+                                <img src="assets/image/home/work10.jpg" alt="work"
+                                    class="work_img img-animation-style2 reveal">
+                                <div class="work_overlay">
+                                    <h3 class="work_h3">Hall Area</h3>
+                                    <p class="work_ptxt">Painting</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="project_details.html">
+                            <div class="work_box">
+                                <img src="assets/image/home/work11.jpg" alt="work"
+                                    class="work_img img-animation-style2 reveal">
+                                <div class="work_overlay">
+                                    <h3 class="work_h3">House Area</h3>
+                                    <p class="work_ptxt">Painting</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="project_details.html">
+                            <div class="work_box">
+                                <img src="assets/image/home/work12.jpg" alt="work"
+                                    class="work_img img-animation-style2 reveal">
+                                <div class="work_overlay">
+                                    <h3 class="work_h3">Room Area</h3>
+                                    <p class="work_ptxt">Painting</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ======================= Dream Section ======================= -->
+        <section class="offer_section">
+            <div class="container">
+                <div class="d-flex flex-lg-row flex-column-reverse dream_section_row">
+                    <div class="d-flex w-100 align-items-end">
+                        <img src="assets/image/home/dream.jpg" alt="dream" class="w-100 dream1">
+                        <div class="dream3 w-100">
+                            <div class="d-flex years align-items-center">
+                                <p class="wedo_h31">7+</p>
+                                <p class="wedo_h32 w-100">Years of Experience</p>
+                            </div>
+                            <img src="assets/image/home/dream1.png" alt="dream1" class="d-flex">
+                        </div>
+                    </div>
+                    <div class="dream_row w-100">
+                        <p class="offer_p text-md-start text-center fade_up">WHAT WE DO</p>
+                        <h2 class="offer_h2 mt-2 text-md-start text-center fade_up">Why Everyone Loves Our Solutions
+                        </h2>
+                        <p class="about_who_p text-md-start text-center">
+                            We’re reshaping tomorrow by crafting next-gen products, brands, and services—driven by
+                            innovation, creativity, and a bold hybrid perspective.
+                        </p>
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Should I refresh my home's paint?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Donec massa sapien faucibus et molestie ac. Sed blandit libero volutpat sed cras
+                                        ornare arcu. Vulputate mi sit amet mauris. Integer enim neque volutpat ac
+                                        tincidunt. Augue neque gravida in fermentum et sollicitudin.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Can color choices impact cost?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Donec massa sapien faucibus et molestie ac. Sed blandit libero volutpat sed cras
+                                        ornare arcu. Vulputate mi sit amet mauris. Integer enim neque volutpat ac
+                                        tincidunt. Augue neque gravida in fermentum et sollicitudin.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        Can I bring my own paint?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Donec massa sapien faucibus et molestie ac. Sed blandit libero volutpat sed cras
+                                        ornare arcu. Vulputate mi sit amet mauris. Integer enim neque volutpat ac
+                                        tincidunt. Augue neque gravida in fermentum et sollicitudin.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFour" aria-expanded="false"
+                                        aria-controls="collapseFour">
+                                        Can we sign a non-disclosure agreement?
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Donec massa sapien faucibus et molestie ac. Sed blandit libero volutpat sed cras
+                                        ornare arcu. Vulputate mi sit amet mauris. Integer enim neque volutpat ac
+                                        tincidunt. Augue neque gravida in fermentum et sollicitudin.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFive" aria-expanded="false"
+                                        aria-controls="collapseFive">
+                                        Do I need to sign a long-term deal?
+                                    </button>
+                                </h2>
+                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Donec massa sapien faucibus et molestie ac. Sed blandit libero volutpat sed cras
+                                        ornare arcu. Vulputate mi sit amet mauris. Integer enim neque volutpat ac
+                                        tincidunt. Augue neque gravida in fermentum et sollicitudin.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ======================= Rolliamge Section ======================= -->
+        <section class="rollimage_section expand-img-main image">
+            <h2 class="d-none">roll image</h2>
+            <img class="expand-img" src="assets/image/home/rollimage.jpg" alt="expand-img">
+        </section>
+        <!-- ======================= Footer ======================= -->
+        <footer class="mt-100">
+            <div class="container">
+                <div class="d-flex footer_grid justify-content-between">
+                    <div class="working">
+                        <p class="footer_ptxt2">Working Hours</p>
+                        <div class="d-flex working_p">
+                            <p class="footer_ptxt">Mon - Fri</p>
+                            <p class="footer_ptxt1">8:00 AM - 5:00 PM</p>
+                        </div>
+                        <div class="d-flex working_p">
+                            <p class="footer_ptxt">Saturday</p>
+                            <p class="footer_ptxt1">8:00 AM - 3:00 PM</p>
+                        </div>
+                        <div class="d-flex working_p">
+                            <p class="footer_ptxt">Sunday</p>
+                            <p class="footer_ptxt1">Close</p>
+                        </div>
+                    </div>
+                    <div class="working1 d-flex">
+                        <ul class="footer_ul">
+                            <li class="footer_ul_li">Our Services</li>
+                            <li><a href="service_interior.html">Interior Painting</a></li>
+                            <li><a href="service_exterior.html">Exterior Painting</a></li>
+                            <li><a href="service_commercial.html">Commercial Painting</a></li>
+                            <li><a href="service_decorative.html">Decorative Painting</a></li>
+                        </ul>
+                        <ul class="footer_ul">
+                            <li class="footer_ul_li">Quick Links</li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="team.html">Our Team</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
+                            <li><a href="pricing_plan.html">Pricing Plan</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="assets/image/home/footerimg.png" alt="footerimg" class="footerimg">
+                    </div>
+                </div>
+                <div class="d-flex footer_row fade_up justify-content-between align-items-center">
+                    <a href="index.html">
+                        <img src="assets/image/svg/footerlogo.svg" alt="footerlogo" class="footerlogo">
+                    </a>
+                    <div class="footer_call align-items-center w-100 d-flex">
+                        <div class="footer_img d-flex align-items-center justify-content-center rounded-circle">
+                            <img src="assets/image/svg/footericon.svg" alt="footericon">
+                        </div>
+                        <div class="d-flex flex-column">
+                            <p class="footer_ptxt3">CALL US NOW!</p>
+                            <a href="tel:13457869999" class="footer_ptxt4">+1 345-786-9999</a>
+                        </div>
+                    </div>
+                    <div class="d-flex footer_icons mt-lg-0 mt-2">
+                        <a href="https://www.facebook.com/" target="_blank">
+                            <div class="footer_icon rounded-circle d-flex align-items-center justify-content-center">
+                                <img src="assets/image/svg/footer1.svg" alt="footer1">
+                            </div>
+                        </a>
+                        <a href="https://x.com/" target="_blank">
+                            <div class="footer_icon rounded-circle d-flex align-items-center justify-content-center">
+                                <img src="assets/image/svg/footer2.svg" alt="footer1">
+                            </div>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank">
+                            <div class="footer_icon rounded-circle d-flex align-items-center justify-content-center">
+                                <img src="assets/image/svg/footer3.svg" alt="footer1">
+                            </div>
+                        </a>
+                        <a href="https://wa.me/13457869999" target="_blank">
+                            <div class="footer_icon rounded-circle d-flex align-items-center justify-content-center">
+                                <img src="assets/image/svg/footer4.svg" alt="footer1">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div
+                    class="small_footer d-flex flex-lg-row flex-column justify-content-lg-between justify-content-center">
+                    <p class="small_footer_p">Copyright © 2024 All Rights Reserved by <span
+                            class="footer_span">The_Krishna</span></p>
+                    <div class="important_txt d-flex mt-lg-0 mt-3">
+                        <a href="javascript:void(0)">
+                            <p class="small_footer_p1">Privacy Policy</p>
+                        </a>
+                        <div class="footer_border"></div>
+                        <a href="javascript:void(0)">
+                            <p class="small_footer_p1">Terms & Conditions</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ======================= Bottom To Top ======================= -->
+    <div id="scrollTopBtn" class="scroll-top" title="Go to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+    <!-- ======================= End Bottom To Top ======================= -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/ScrollMagic.min.js"></script>
+    <script src="assets/js/animation.gsap.min.js"></script>
+    <script src="assets/js/particles.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/smothscrolling.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
