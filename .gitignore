@@ -1,0 +1,141 @@
+# .gitignore - Malarz Trzebnica PHP
+# Firma malarska - www.malarz.trzebnica.pl
+
+# PHP Dependencies (Composer)
+/vendor/
+composer.lock
+composer.phar
+
+# Node.js Dependencies
+/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Cache & Temporary Files
+/cache/
+/tmp/
+/temp/
+*.cache
+*.tmp
+*.temp
+.php_cs.cache
+.phpunit.result.cache
+.phpcs-cache
+
+# IDE & Editor Files
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.iml
+*.iws
+*.ipr
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*.swn
+
+# Operating System Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Environment & Configuration
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.staging
+config.local.php
+config.dev.php
+secrets.php
+
+# Logs
+/logs/
+*.log
+error.log
+access.log
+debug.log
+php_errors.log
+
+# Uploads & User Content
+/uploads/test/
+/uploads/temp/
+/uploads/tmp/
+/dist/uploads/test/
+/dist/uploads/temp/
+!uploads/.gitkeep
+!dist/uploads/.gitkeep
+
+# Build & Distribution
+/build/
+*.min.css.map
+*.min.js.map
+
+# Testing
+/coverage/
+.phpunit.cache/
+phpunit.xml
+!phpunit.xml.dist
+
+# Documentation Build
+/docs/_build/
+/docs/api/
+
+# Backup Files
+*.bak
+*.backup
+*.old
+*.orig
+*_backup
+*_bak
+
+# Database
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+!database/schema.sql
+!database/migrations/*.sql
+
+# Security Sensitive
+*.pem
+*.key
+*.crt
+*.cer
+*.p12
+*.pfx
+id_rsa
+id_dsa
+*.ppk
+credentials.json
+service-account.json
+
+# Archive Files
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Misc
+.sass-cache/
+*.css.map
+*.js.map
+.grunt
+.bower.json
+bower_components/

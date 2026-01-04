@@ -1,0 +1,210 @@
+# EditorConfig - Malarz Trzebnica PHP
+# https://editorconfig.org
+# Standardy formatowania kodu dla calego projektu
+
+# Top-level EditorConfig file
+root = true
+
+# ========================================
+# Domyslne ustawienia dla wszystkich plikow
+# ========================================
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+max_line_length = 120
+
+# ========================================
+# PHP - Pliki serwerowe
+# ========================================
+[*.php]
+indent_style = space
+indent_size = 4
+max_line_length = 120
+
+# ========================================
+# HTML - Szablony i widoki
+# ========================================
+[*.html]
+indent_style = space
+indent_size = 2
+max_line_length = 120
+
+[*.htm]
+indent_style = space
+indent_size = 2
+max_line_length = 120
+
+# ========================================
+# CSS - Arkusze stylow
+# ========================================
+[*.css]
+indent_style = space
+indent_size = 2
+max_line_length = 120
+
+[*.scss]
+indent_style = space
+indent_size = 2
+max_line_length = 120
+
+[*.sass]
+indent_style = space
+indent_size = 2
+max_line_length = 120
+
+[*.less]
+indent_style = space
+indent_size = 2
+max_line_length = 120
+
+# ========================================
+# JavaScript - Skrypty klienckie
+# ========================================
+[*.js]
+indent_style = space
+indent_size = 2
+max_line_length = 120
+
+[*.mjs]
+indent_style = space
+indent_size = 2
+max_line_length = 120
+
+[*.ts]
+indent_style = space
+indent_size = 2
+max_line_length = 120
+
+# ========================================
+# JSON - Pliki konfiguracyjne
+# ========================================
+[*.json]
+indent_style = space
+indent_size = 2
+max_line_length = off
+
+[package.json]
+indent_style = space
+indent_size = 2
+
+[composer.json]
+indent_style = space
+indent_size = 4
+
+# ========================================
+# YAML - Konfiguracja CI/CD i GitHub
+# ========================================
+[*.yml]
+indent_style = space
+indent_size = 2
+
+[*.yaml]
+indent_style = space
+indent_size = 2
+
+# ========================================
+# Markdown - Dokumentacja
+# ========================================
+[*.md]
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = false
+max_line_length = off
+
+# ========================================
+# XML - Konfiguracje i dane
+# ========================================
+[*.xml]
+indent_style = space
+indent_size = 2
+
+[*.svg]
+indent_style = space
+indent_size = 2
+
+# ========================================
+# Pliki konfiguracyjne serwera
+# ========================================
+[.htaccess]
+indent_style = space
+indent_size = 4
+
+[*.conf]
+indent_style = space
+indent_size = 4
+
+[*.ini]
+indent_style = space
+indent_size = 4
+
+# ========================================
+# Pliki specjalne
+# ========================================
+[Makefile]
+indent_style = tab
+indent_size = 4
+
+[*.bat]
+end_of_line = crlf
+indent_style = space
+indent_size = 4
+
+[*.cmd]
+end_of_line = crlf
+indent_style = space
+indent_size = 4
+
+[*.ps1]
+end_of_line = crlf
+indent_style = space
+indent_size = 4
+
+[*.sh]
+end_of_line = lf
+indent_style = space
+indent_size = 4
+
+# ========================================
+# Pliki binarne i zminifikowane (bez zmian)
+# ========================================
+[*.min.js]
+indent_style = ignore
+indent_size = ignore
+insert_final_newline = ignore
+trim_trailing_whitespace = ignore
+
+[*.min.css]
+indent_style = ignore
+indent_size = ignore
+insert_final_newline = ignore
+trim_trailing_whitespace = ignore
+
+# ========================================
+# SQL - Baza danych
+# ========================================
+[*.sql]
+indent_style = space
+indent_size = 4
+max_line_length = 120
+
+# ========================================
+# Pliki .env
+# ========================================
+[.env*]
+indent_style = space
+indent_size = 4
+
+# ========================================
+# Git
+# ========================================
+[.gitattributes]
+indent_style = space
+indent_size = 4
+
+[.gitignore]
+indent_style = space
+indent_size = 4

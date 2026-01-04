@@ -1,0 +1,86 @@
+{
+    "name": "malarz-trzebnica/website",
+    "description": "Strona internetowa firmy malarskiej Malarz Trzebnica - profesjonalne uslugi malarskie i wykonczeniowe",
+    "type": "project",
+    "license": "MIT",
+    "keywords": [
+        "malarz",
+        "trzebnica",
+        "uslugi-malarskie",
+        "firma-malarska",
+        "php",
+        "mvc",
+        "bootstrap"
+    ],
+    "homepage": "https://www.malarz.trzebnica.pl",
+    "authors": [
+        {
+            "name": "Malarz Trzebnica",
+            "email": "kontakt@malarz.trzebnica.pl",
+            "homepage": "https://www.malarz.trzebnica.pl",
+            "role": "Owner"
+        }
+    ],
+    "support": {
+        "email": "kontakt@malarz.trzebnica.pl",
+        "issues": "https://github.com/user/malarz-trzebnica-php/issues"
+    },
+    "require": {
+        "php": ">=7.4",
+        "phpmailer/phpmailer": "^6.8",
+        "vlucas/phpdotenv": "^5.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.6",
+        "squizlabs/php_codesniffer": "^3.7",
+        "phpstan/phpstan": "^1.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "dist/app/",
+            "App\Controllers\\": "dist/app/Controllers/",
+            "App\Models\\": "dist/app/Models/",
+            "App\Services\\": "dist/app/Services/",
+            "App\Helpers\\": "dist/app/Helpers/"
+        },
+        "files": [
+            "dist/app/Helpers/functions.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "start": "php -S localhost:8000 -t dist/",
+        "test": "phpunit --configuration phpunit.xml",
+        "test:coverage": "phpunit --configuration phpunit.xml --coverage-html coverage/",
+        "lint": "phpcs --standard=PSR12 dist/app/",
+        "lint:fix": "phpcbf --standard=PSR12 dist/app/",
+        "analyse": "phpstan analyse dist/app/ --level=5",
+        "check": [
+            "@lint",
+            "@analyse",
+            "@test"
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "platform": {
+            "php": "7.4"
+        },
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.0-dev"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
