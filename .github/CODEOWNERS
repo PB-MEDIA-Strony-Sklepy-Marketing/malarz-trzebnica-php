@@ -1,0 +1,268 @@
+# Code Owners - Malarz Trzebnica
+
+# Plik CODEOWNERS definiuje osoby odpowiedzialne za code review
+# poszczególnych części projektu. Gdy ktoś tworzy Pull Request
+# modyfikujący pliki z danej sekcji, automatycznie przypisane zostaną
+# odpowiednie osoby do review.
+
+# Format:
+# pattern owner1 @owner2 @org/team-name
+
+# ------------------------------------------------------------------------------
+# GLOBALNE - Default owners dla wszystkich plików
+# ------------------------------------------------------------------------------
+
+* @malarz-trzebnica/core-team
+
+# ------------------------------------------------------------------------------
+# DOKUMENTACJA
+# ------------------------------------------------------------------------------
+
+# Główna dokumentacja projektu
+/README.md @malarz-trzebnica/core-team @malarz-trzebnica/documentation
+/CONFIG-FILE.md @malarz-trzebnica/core-team
+/INFO-FILE.md @malarz-trzebnica/core-team
+/LICENSE @malarz-trzebnica/core-team
+
+# Dokumentacja techniczna
+/docs/ @malarz-trzebnica/documentation @malarz-trzebnica/developers
+/docs/INSTALACJA.md @malarz-trzebnica/devops
+/docs/DEPLOYMENT.md @malarz-trzebnica/devops
+/docs/BEZPIECZENSTWO.md @malarz-trzebnica/security
+/docs/SEO.md @malarz-trzebnica/marketing @malarz-trzebnica/seo
+
+# Instrukcje deweloperskie
+/instructions/ @malarz-trzebnica/developers
+/instructions/CODING-STANDARDS.md @malarz-trzebnica/lead-developer
+/instructions/GIT-WORKFLOW.md @malarz-trzebnica/lead-developer
+
+# ------------------------------------------------------------------------------
+# KONFIGURACJA PROJEKTU
+# ------------------------------------------------------------------------------
+
+# Composer - zależności PHP
+/composer.json @malarz-trzebnica/lead-developer @malarz-trzebnica/devops
+/composer.lock @malarz-trzebnica/lead-developer @malarz-trzebnica/devops
+
+# NPM - zależności JavaScript
+/package.json @malarz-trzebnica/frontend-team @malarz-trzebnica/devops
+/package-lock.json @malarz-trzebnica/frontend-team
+
+# Konfiguracja środowiska
+/.editorconfig @malarz-trzebnica/lead-developer
+/.gitignore @malarz-trzebnica/core-team
+/.gitattributes @malarz-trzebnica/core-team
+/.env.example @malarz-trzebnica/devops @malarz-trzebnica/security
+
+# Quality tools
+/phpcs.xml @malarz-trzebnica/lead-developer
+/phpstan.neon @malarz-trzebnica/lead-developer
+/phpunit.xml @malarz-trzebnica/developers
+/.php-cs-fixer.php @malarz-trzebnica/lead-developer
+
+# ------------------------------------------------------------------------------
+# GITHUB CONFIGURATION
+# ------------------------------------------------------------------------------
+
+# GitHub Actions workflows
+/.github/workflows/ @malarz-trzebnica/devops @malarz-trzebnica/lead-developer
+/.github/workflows/deploy-production.yml @malarz-trzebnica/devops @malarz-trzebnica/core-team
+/.github/workflows/backup.yml @malarz-trzebnica/devops
+
+# GitHub templates
+/.github/ISSUE_TEMPLATE/ @malarz-trzebnica/core-team
+/.github/PULL_REQUEST_TEMPLATE.md @malarz-trzebnica/core-team
+/.github/CODEOWNERS @malarz-trzebnica/lead-developer
+
+# GitHub Actions & prompts
+/.github/agents/ @malarz-trzebnica/ai-team
+/.github/prompts/ @malarz-trzebnica/ai-team
+/.github/knowledge/ @malarz-trzebnica/ai-team @malarz-trzebnica/documentation
+
+# ------------------------------------------------------------------------------
+# PLIKI PRODUKCYJNE (dist/)
+# ------------------------------------------------------------------------------
+
+# Wszystkie pliki PHP w dist/
+/dist/**/*.php @malarz-trzebnica/backend-team @malarz-trzebnica/developers
+
+# Strony główne
+/dist/index.php @malarz-trzebnica/backend-team @malarz-trzebnica/frontend-team
+/dist/template.php @malarz-trzebnica/backend-team @malarz-trzebnica/frontend-team
+/dist/oferta.php @malarz-trzebnica/backend-team @malarz-trzebnica/content-team
+/dist/galeria.php @malarz-trzebnica/backend-team @malarz-trzebnica/frontend-team
+/dist/kontakt.php @malarz-trzebnica/backend-team @malarz-trzebnica/security
+
+# Konfiguracja PHP
+/dist/includes/config.php @malarz-trzebnica/backend-team @malarz-trzebnica/security
+/dist/config/ @malarz-trzebnica/backend-team @malarz-trzebnica/devops
+
+# Architektura MVC Core
+/dist/core/ @malarz-trzebnica/lead-developer @malarz-trzebnica/backend-team
+/dist/core/Router.php @malarz-trzebnica/lead-developer
+/dist/core/Security.php @malarz-trzebnica/security @malarz-trzebnica/lead-developer
+/dist/core/Validator.php @malarz-trzebnica/backend-team
+
+# Controllers
+/dist/app/Controllers/ @malarz-trzebnica/backend-team
+
+# Models
+/dist/app/Models/ @malarz-trzebnica/backend-team @malarz-trzebnica/database-team
+
+# Views
+/dist/app/Views/ @malarz-trzebnica/frontend-team @malarz-trzebnica/backend-team
+
+# Services
+/dist/app/Services/ @malarz-trzebnica/backend-team
+
+# Helpers
+/dist/app/Helpers/ @malarz-trzebnica/backend-team
+/dist/app/Helpers/functions.php @malarz-trzebnica/backend-team
+
+# ------------------------------------------------------------------------------
+# FRONTEND ASSETS
+# ------------------------------------------------------------------------------
+
+# CSS
+/dist/assets/css/ @malarz-trzebnica/frontend-team @malarz-trzebnica/designers
+/dist/assets/css/style.css @malarz-trzebnica/frontend-team @malarz-trzebnica/designers
+
+# JavaScript
+/dist/assets/js/ @malarz-trzebnica/frontend-team
+/dist/assets/js/main.js @malarz-trzebnica/frontend-team
+/dist/assets/js/form-validation.js @malarz-trzebnica/frontend-team @malarz-trzebnica/security
+
+# Obrazy i grafiki
+/dist/assets/images/ @malarz-trzebnica/designers @malarz-trzebnica/content-team
+/dist/assets/image/ @malarz-trzebnica/designers @malarz-trzebnica/content-team
+
+# Fonty
+/dist/assets/fonts/ @malarz-trzebnica/designers
+/dist/assets/font/ @malarz-trzebnica/designers
+
+# Pliki użytkowników
+/dist/uploads/ @malarz-trzebnica/backend-team @malarz-trzebnica/content-team
+
+# ------------------------------------------------------------------------------
+# SOURCE FILES (src/)
+# ------------------------------------------------------------------------------
+
+# HTML templates (oryginalne szablony Bootstrap)
+/src/*.html @malarz-trzebnica/frontend-team @malarz-trzebnica/designers
+/src/assets/ @malarz-trzebnica/frontend-team @malarz-trzebnica/designers
+
+# ------------------------------------------------------------------------------
+# KONFIGURACJA SERWERA
+# ------------------------------------------------------------------------------
+
+# Apache configuration
+/.htaccess @malarz-trzebnica/devops @malarz-trzebnica/security
+/dist/.htaccess @malarz-trzebnica/devops @malarz-trzebnica/security
+
+# Nginx configuration (jeśli używana)
+/nginx.conf @malarz-trzebnica/devops
+
+# ------------------------------------------------------------------------------
+# AI AGENTS & PROMPTS
+# ------------------------------------------------------------------------------
+
+# Lokalne kopie agentów AI
+/agents/ @malarz-trzebnica/ai-team
+/agents/CLAUDE.md @malarz-trzebnica/ai-team
+/agents/GITHUB-COPILOT.md @malarz-trzebnica/ai-team @malarz-trzebnica/developers
+
+# Prompty dla AI
+/prompts/ @malarz-trzebnica/ai-team
+/prompts/PROJEKT-KONTEKST.md @malarz-trzebnica/ai-team @malarz-trzebnica/core-team
+/prompts/SEO-OPTIMIZATION.md @malarz-trzebnica/ai-team @malarz-trzebnica/seo
+
+# Baza wiedzy
+/knowledge/ @malarz-trzebnica/content-team @malarz-trzebnica/ai-team
+/knowledge/FIRMA-MALARZ-TRZEBNICA.md @malarz-trzebnica/core-team
+/knowledge/USLUGI.md @malarz-trzebnica/content-team @malarz-trzebnica/marketing
+/knowledge/BRANDING.md @malarz-trzebnica/marketing @malarz-trzebnica/designers
+
+# GitHub Copilot Collections
+/collections/ @malarz-trzebnica/ai-team @malarz-trzebnica/developers
+
+# ------------------------------------------------------------------------------
+# TEKSTY I TREŚCI
+# ------------------------------------------------------------------------------
+
+# Treści tekstowe
+/text/ @malarz-trzebnica/content-team @malarz-trzebnica/seo
+
+# ------------------------------------------------------------------------------
+# TESTY
+# ------------------------------------------------------------------------------
+
+# Testy PHP
+/tests/ @malarz-trzebnica/developers @malarz-trzebnica/qa-team
+/tests/Unit/ @malarz-trzebnica/developers
+/tests/Integration/ @malarz-trzebnica/qa-team @malarz-trzebnica/developers
+
+# ------------------------------------------------------------------------------
+# SECURITY & COMPLIANCE
+# ------------------------------------------------------------------------------
+
+/SECURITY.md @malarz-trzebnica/security @malarz-trzebnica/core-team
+/docs/BEZPIECZENSTWO.md @malarz-trzebnica/security
+/docs/PRIVACY-POLICY.md @malarz-trzebnica/legal @malarz-trzebnica/security
+
+# ------------------------------------------------------------------------------
+# DEVOPS & DEPLOYMENT
+# ------------------------------------------------------------------------------
+
+# Docker
+/docker-compose.yml @malarz-trzebnica/devops
+/Dockerfile @malarz-trzebnica/devops
+/.dockerignore @malarz-trzebnica/devops
+
+# Deployment scripts
+/deploy.sh @malarz-trzebnica/devops @malarz-trzebnica/lead-developer
+/scripts/ @malarz-trzebnica/devops
+
+# ------------------------------------------------------------------------------
+# MARKETING & SEO
+# ------------------------------------------------------------------------------
+
+/docs/SEO.md @malarz-trzebnica/seo @malarz-trzebnica/marketing
+/docs/MARKETING-STRATEGY.md @malarz-trzebnica/marketing
+/knowledge/SŁOWA-KLUCZOWE.md @malarz-trzebnica/seo @malarz-trzebnica/content-team
+
+# ------------------------------------------------------------------------------
+# ROADMAP & PLANNING
+# ------------------------------------------------------------------------------
+
+/ROADMAP.md @malarz-trzebnica/core-team @malarz-trzebnica/product-owner
+/CHANGELOG.md @malarz-trzebnica/core-team
+
+# ------------------------------------------------------------------------------
+# UWAGI
+# ------------------------------------------------------------------------------
+
+# Jeśli nie masz utworzonych zespołów GitHub (@org/team-name),
+# możesz użyć indywidualnych usernames:
+#
+# Przykład:
+# /dist/**/*.php @username1 @username2
+# /.github/workflows/ @devops-username
+#
+# Aby utworzyć zespoły GitHub:
+# 1. Idź do Settings → Teams w swoim repozytorium/organizacji
+# 2. Utwórz zespoły (np. "core-team", "backend-team", "frontend-team")
+# 3. Dodaj członków do zespołów
+# 4. Zaktualizuj ten plik używając @organization/team-name
+#
+# Przykładowe zespoły dla projektu Malarz Trzebnica:
+# - @malarz-trzebnica/core-team - główni maintainerzy
+# - @malarz-trzebnica/backend-team - developerzy PHP
+# - @malarz-trzebnica/frontend-team - developerzy frontend (HTML/CSS/JS)
+# - @malarz-trzebnica/devops - DevOps i deployment
+# - @malarz-trzebnica/security - bezpieczeństwo
+# - @malarz-trzebnica/content-team - zarządzanie treścią
+# - @malarz-trzebnica/marketing - SEO i marketing
+# - @malarz-trzebnica/designers - UI/UX designers
+# - @malarz-trzebnica/ai-team - zarządzanie AI agents
+# - @malarz-trzebnica/qa-team - Quality Assurance
+# - @malarz-trzebnica/documentation - dokumentacja

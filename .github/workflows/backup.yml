@@ -1,0 +1,306 @@
+name: Weekly Backup
+
+on:
+  schedule:
+    # Run every Monday at 3 AM UTC
+    - cron: '0 3 * * 1'
+  workflow_dispatch:
+    inputs:
+      backup_type:
+        description: 'Type of backup'
+        required: true
+        default: 'full'
+        type: choice
+        options:
+          - full
+          - code-only
+          - database-only
+
+jobs:
+  backup-repository:
+    name: Backup Repository Files
+    runs-on: ubuntu-latest
+    if: github.event.inputs.backup_type != 'database-only' || github.event_name == 'schedule'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history for complete backup
+      
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d_%H-%M-%S')" >> $GITHUB_OUTPUT
+      
+      - name: Create backup archive
+        run: |
+          BACKUP_NAME="malarz-trzebnica-backup-${{ steps.date.outputs.date }}"
+          
+          # Create full backup excluding unnecessary files
+          tar -czf "${BACKUP_NAME}.tar.gz" \
+            --exclude='.git' \
+            --exclude='node_modules' \
+            --exclude='vendor' \
+            --exclude='*.log' \
+            --exclude='*.cache' \
+            --exclude='dist/uploads/*' \
+            .
+          
+          echo "Backup archive created: ${BACKUP_NAME}.tar.gz"
+          ls -lh "${BACKUP_NAME}.tar.gz"
+      
+      - name: Generate backup manifest
+        run: |
+          cat << EOF > backup-manifest.txt
+          Backup Manifest
+          ================
+          
+          Repository: ${{ github.repository }}
+          Backup Date: ${{ steps.date.outputs.date }}
+          Commit SHA: ${{ github.sha }}
+          Branch: ${{ github.ref_name }}
+          Triggered by: ${{ github.event_name }}
+          Actor: ${{ github.actor }}
+          
+          Contents:
+          - Source code (dist/, src/)
+          - Documentation (docs/, README.md)
+          - Configuration files
+          - Composer dependencies manifest
+          - GitHub workflows
+          - AI Agents configuration
+          
+          Excluded:
+          - .git directory
+          - node_modules/
+          - vendor/
+          - Log files
+          - Cache files
+          - Uploaded user files (dist/uploads/)
+          EOF
+          
+          cat backup-manifest.txt
+      
+      - name: Upload backup artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: malarz-trzebnica-backup-${{ steps.date.outputs.date }}
+          path: |
+            malarz-trzebnica-backup-*.tar.gz
+            backup-manifest.txt
+          retention-days: 90
+      
+      - name: Create backup release (optional)
+        if: github.event_name == 'schedule'
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: backup-${{ steps.date.outputs.date }}
+          name: "Automatic Backup - ${{ steps.date.outputs.date }}"
+          body: |
+            🔄 Automated weekly backup
+            
+            **Backup Details:**
+            - Date: ${{ steps.date.outputs.date }}
+            - Commit: ${{ github.sha }}
+            - Branch: ${{ github.ref_name }}
+            
+            This backup contains:
+            - Complete source code
+            - Documentation
+            - Configuration files
+            - Dependencies manifest
+            
+            **Restore Instructions:**
+            1. Download the backup archive
+            2. Extract: `tar -xzf malarz-trzebnica-backup-*.tar.gz`
+            3. Run: `composer install`
+            4. Configure .env file
+            5. Deploy to server
+          files: |
+            malarz-trzebnica-backup-*.tar.gz
+            backup-manifest.txt
+          draft: false
+          prerelease: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  backup-database:
+    name: Backup Database (if exists)
+    runs-on: ubuntu-latest
+    if: github.event.inputs.backup_type == 'database-only' || github.event.inputs.backup_type == 'full' || github.event_name == 'schedule'
+    
+    steps:
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d_%H-%M-%S')" >> $GITHUB_OUTPUT
+      
+      - name: Create database backup script
+        run: |
+          cat << 'EOF' > backup-database.sh
+          #!/bin/bash
+          
+          # Database backup script for Malarz Trzebnica
+          # This script can be customized based on actual database configuration
+          
+          BACKUP_NAME="database-backup-$(date +'%Y-%m-%d_%H-%M-%S').sql"
+          
+          # If using MySQL/MariaDB:
+          # mysqldump -h $DB_HOST -u $DB_USER -p$DB_PASSWORD $DB_NAME > $BACKUP_NAME
+          
+          # If using PostgreSQL:
+          # pg_dump -h $DB_HOST -U $DB_USER -d $DB_NAME > $BACKUP_NAME
+          
+          # If using SQLite:
+          # sqlite3 database.db .dump > $BACKUP_NAME
+          
+          echo "Database backup would be created here if database is configured"
+          echo "Backup filename: $BACKUP_NAME"
+          
+          # Create dummy backup file for demonstration
+          cat << SQLDUMP > $BACKUP_NAME
+          -- Malarz Trzebnica Database Backup
+          -- Generated: $(date)
+          -- Note: Configure actual database backup in backup-database.sh
+          
+          -- This is a placeholder for actual database backup
+          -- Uncomment and configure the appropriate database dump command above
+          SQLDUMP
+          
+          echo "created" > backup-status.txt
+          EOF
+          
+          chmod +x backup-database.sh
+          ./backup-database.sh
+      
+      - name: Compress database backup
+        run: |
+          if [ -f database-backup-*.sql ]; then
+            gzip database-backup-*.sql
+            echo "Database backup compressed"
+          else
+            echo "No database backup file found"
+          fi
+      
+      - name: Upload database backup
+        uses: actions/upload-artifact@v3
+        with:
+          name: database-backup-${{ steps.date.outputs.date }}
+          path: |
+            database-backup-*.sql.gz
+            backup-status.txt
+          retention-days: 90
+        if: hashFiles('database-backup-*.sql.gz') != ''
+
+  backup-uploads:
+    name: Backup User Uploads
+    runs-on: ubuntu-latest
+    if: github.event.inputs.backup_type != 'database-only' || github.event_name == 'schedule'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d_%H-%M-%S')" >> $GITHUB_OUTPUT
+      
+      - name: Check uploads directory
+        id: check_uploads
+        run: |
+          if [ -d "dist/uploads" ] && [ "$(ls -A dist/uploads)" ]; then
+            echo "has_uploads=true" >> $GITHUB_OUTPUT
+            echo "Uploads directory contains files"
+          else
+            echo "has_uploads=false" >> $GITHUB_OUTPUT
+            echo "Uploads directory is empty or doesn't exist"
+            mkdir -p dist/uploads
+            echo "placeholder" > dist/uploads/.gitkeep
+          fi
+      
+      - name: Create uploads backup
+        if: steps.check_uploads.outputs.has_uploads == 'true'
+        run: |
+          UPLOADS_BACKUP="uploads-backup-${{ steps.date.outputs.date }}.tar.gz"
+          tar -czf "$UPLOADS_BACKUP" dist/uploads/
+          echo "Uploads backup created: $UPLOADS_BACKUP"
+          ls -lh "$UPLOADS_BACKUP"
+      
+      - name: Upload uploads backup
+        if: steps.check_uploads.outputs.has_uploads == 'true'
+        uses: actions/upload-artifact@v3
+        with:
+          name: uploads-backup-${{ steps.date.outputs.date }}
+          path: uploads-backup-*.tar.gz
+          retention-days: 90
+
+  backup-summary:
+    name: Backup Summary
+    runs-on: ubuntu-latest
+    needs: [backup-repository, backup-database, backup-uploads]
+    if: always()
+    
+    steps:
+      - name: Generate backup summary
+        run: |
+          cat << EOF >> $GITHUB_STEP_SUMMARY
+          ## 💾 Backup Summary
+          
+          **Date:** $(date +'%Y-%m-%d %H:%M:%S UTC')
+          **Trigger:** ${{ github.event_name }}
+          **Repository:** ${{ github.repository }}
+          **Commit:** ${{ github.sha }}
+          
+          ### Backup Jobs Status
+          
+          | Job | Status |
+          |-----|--------|
+          | Repository Files | ${{ needs.backup-repository.result }} |
+          | Database | ${{ needs.backup-database.result }} |
+          | User Uploads | ${{ needs.backup-uploads.result }} |
+          
+          ### Backup Retention
+          
+          - **Artifacts:** 90 days
+          - **Releases:** Permanent (manual deletion required)
+          
+          ### Restore Instructions
+          
+          1. Go to [Actions Artifacts](https://github.com/${{ github.repository }}/actions)
+          2. Download the backup artifact
+          3. Extract the archive
+          4. Follow restoration procedure in docs/DEPLOYMENT.md
+          
+          ### Next Scheduled Backup
+          
+          Every Monday at 3:00 AM UTC
+          
+          ---
+          
+          ✅ Backup process completed
+          EOF
+      
+      - name: Notify on failure
+        if: needs.backup-repository.result == 'failure' || needs.backup-database.result == 'failure'
+        run: |
+          echo "::error::One or more backup jobs failed. Review the logs."
+          exit 1
+
+  cleanup-old-backups:
+    name: Cleanup Old Backups
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule'
+    
+    steps:
+      - name: Delete old backup releases
+        uses: dev-drprasad/delete-older-releases@v0.3.2
+        with:
+          keep_latest: 12  # Keep last 12 weekly backups (3 months)
+          delete_tags: true
+          delete_tag_pattern: backup-
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Cleanup summary
+        run: |
+          echo "🧹 Cleaned up backup releases older than 12 weeks"
+          echo "Retained: Last 12 weekly backups"

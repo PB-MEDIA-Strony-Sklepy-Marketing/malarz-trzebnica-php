@@ -1,0 +1,149 @@
+name: PHP Lint & CodeSniffer
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - '**.php'
+      - 'composer.json'
+      - 'composer.lock'
+      - '.github/workflows/php-lint.yml'
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - '**.php'
+      - 'composer.json'
+      - 'composer.lock'
+
+jobs:
+  php-lint:
+    name: PHP Syntax Check & PSR-12
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        php-version: ['7.4', '8.0', '8.1', '8.2']
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup PHP ${{ matrix.php-version }}
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: mbstring, xml, ctype, json
+          coverage: none
+          tools: composer:v2
+      
+      - name: Validate composer.json
+        run: composer validate --strict
+      
+      - name: Cache Composer dependencies
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ matrix.php-version }}-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-${{ matrix.php-version }}-
+      
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-interaction
+      
+      - name: PHP Syntax Check
+        run: |
+          find dist/ -name "*.php" -print0 | xargs -0 -n1 php -l
+      
+      - name: Run PHP CodeSniffer (PSR-12)
+        run: |
+          composer lint
+      
+      - name: PHP CodeSniffer with annotations
+        if: failure()
+        run: |
+          vendor/bin/phpcs --standard=PSR12 --report=checkstyle dist/app/ | cs2pr
+        continue-on-error: true
+      
+      - name: Comment PR with lint results
+        if: github.event_name == 'pull_request' && failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '⚠️ PHP CodeSniffer wykrył problemy ze standardem PSR-12. Sprawdź logi workflow dla szczegółów.'
+            })
+
+  phpstan-analysis:
+    name: PHPStan Static Analysis
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          extensions: mbstring, xml, ctype, json
+          coverage: none
+          tools: composer:v2
+      
+      - name: Cache Composer dependencies
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-phpstan-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-phpstan-
+      
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-interaction
+      
+      - name: Run PHPStan
+        run: composer analyse
+      
+      - name: Upload PHPStan results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: phpstan-results
+          path: phpstan-report.txt
+          if-no-files-found: ignore
+
+  security-check:
+    name: Security Vulnerabilities Check
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          tools: composer:v2
+      
+      - name: Check for security vulnerabilities
+        run: |
+          composer audit || echo "::warning::Security vulnerabilities detected in dependencies"
+      
+      - name: Create security report
+        if: always()
+        run: |
+          echo "## Security Audit Report" > security-report.md
+          echo "Generated: $(date)" >> security-report.md
+          echo "" >> security-report.md
+          composer audit --format=json > audit.json || true
+          cat audit.json >> security-report.md
+      
+      - name: Upload security report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: security-report
+          path: security-report.md
