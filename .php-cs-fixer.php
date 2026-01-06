@@ -1,7 +1,6 @@
-# PHP CS Fixer Configuration - Malarz Trzebnica
-# Auto-formatting PHP code
-
 <?php
+// PHP CS Fixer Configuration - Malarz Trzebnica
+// Auto-formatting PHP code
 
 $finder = PhpCsFixer\Finder::create()
     ->in([
