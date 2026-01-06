@@ -1,0 +1,66 @@
+# Dockerignore - Malarz Trzebnica PHP
+# Pliki wykluczane z obrazu Docker
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+README.md
+CHANGELOG.md
+CONFIG-FILE.md
+INFO-FILE.md
+docs/
+agents/
+prompts/
+collections/
+instructions/
+knowledge/
+
+# CI/CD
+.github/
+
+# Dependencies
+vendor/
+node_modules/
+composer.lock
+package-lock.json
+
+# Build artifacts
+build/
+dist/assets/*.map
+
+# Cache
+cache/
+tmp/
+temp/
+*.cache
+
+# Logs
+*.log
+logs/
+
+# Environment
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Testing
+tests/
+coverage/
+phpunit.xml
+.phpunit.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Backups
+*.backup
+*.bak
+*.old
