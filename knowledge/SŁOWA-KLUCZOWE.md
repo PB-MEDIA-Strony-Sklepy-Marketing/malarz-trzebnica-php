@@ -2,6 +2,8 @@
 
 ## Primary Keywords (najważniejsze)
 
+<!-- Source: Google Keyword Planner, estimated monthly searches, data retrieved January 2025. -->
+
 1. **malarz Trzebnica** - 480 searches/month
 2. **usługi malarskie Trzebnica** - 210 searches/month
 3. **malowanie Trzebnica** - 320 searches/month
