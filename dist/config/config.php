@@ -21,7 +21,21 @@ return [
         'slogan' => 'Precision, Perfection, Professional',
         'url' => $_ENV['APP_URL'] ?? 'https://www.malarz.trzebnica.pl',
         'env' => $_ENV['APP_ENV'] ?? 'production',
-        'debug' => filter_var($_ENV['APP_DEBUG'] ?? false, FILTER_VALIDATE_BOOLEAN),
+// Load environment variables safely
+try {
+    if (file_exists(__DIR__ . '/../../.env')) {
+        $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../..');
+        $dotenv->load();
+        // Validate required variables
+        $dotenv->required(['APP_URL', 'APP_ENV']);
+    }
+} catch (\Exception $e) {
+    // Log error and optionally use defaults in production
+    error_log('Failed to load .env: ' . $e->getMessage());
+    if ($_ENV['APP_ENV'] ?? 'production' !== 'production') {
+        throw $e; // Re-throw in development for visibility
+    }
+}
         'timezone' => 'Europe/Warsaw',
         'locale' => 'pl_PL',
     ],
