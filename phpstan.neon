@@ -1,0 +1,10 @@
+parameters:
+    level: 5
+    paths:
+        - dist/app
+        - dist/core
+    excludePaths:
+        - vendor
+        - node_modules
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false
