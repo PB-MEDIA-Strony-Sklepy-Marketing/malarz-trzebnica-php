@@ -4,7 +4,7 @@
 
 ### Strona Główna
 ```html
-<title>Malarz Trzebnica - Profesjonalne Usługi Malarskie | ☎ 452 690 824</title>
+<title>Malarz Trzebnica - Profesjonalne Usługi Malarskie | ☎ +48 452 690 824</title>
 <meta name="description" content="Malarz Trzebnica oferuje kompleksowe usługi malarskie: malowanie wnętrz i elewacji, szpachlowanie, sucha zabudowa GK. Doświadczenie, profesjonalizm, konkurencyjne ceny.">
 <meta name="keywords" content="malarz Trzebnica, usługi malarskie, malowanie wnętrz, malowanie elewacji, szpachlowanie Trzebnica">
 ```
