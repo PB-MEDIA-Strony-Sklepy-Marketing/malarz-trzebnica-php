@@ -1,0 +1,62 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.premium-navbar {
+    background: rgba(0, 60, 130, 0.95);
+}
+
+.hero-section {
+    height: 100vh;
+    background: url("https://images.unsplash.com/photo-1503387762-592deb58ef4e") center/cover fixed;
+    position: relative;
+}
+
+.hero-section .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(0,40,90,.8), rgba(0,80,180,.7));
+}
+
+.section-padding {
+    padding: 90px 0;
+}
+
+.section-title {
+    font-weight: 700;
+    color: #0b3c7d;
+}
+
+.service-card {
+    background: #fff;
+    padding: 40px 25px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,.08);
+    transition: .4s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card i {
+    font-size: 42px;
+    color: #0d6efd;
+    margin-bottom: 20px;
+}
+
+.btn-gradient {
+    background: linear-gradient(135deg, #0d6efd, #0b3c7d);
+    color: #fff;
+    border: none;
+}
+
+.cta-section {
+    background: linear-gradient(135deg, #0b3c7d, #0d6efd);
+    padding: 80px 0;
+}
+
+.footer {
+    padding: 40px 0;
+}

@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profesjonalne usługi malarskie i wykończeniowe w Trzebnicy | Malarz Trzebnica</title>
+    <meta name="description" content="Profesjonalne usługi malarskie i wykończeniowe w Trzebnicy i okolicach. Malowanie wnętrz i elewacji, szpachlowanie, sucha zabudowa GK. Kompleksowe wykończenia wnętrz.">
+    <meta name="keywords" content="malarz Trzebnica, usługi malarskie Trzebnica, malowanie wnętrz, malowanie elewacji, szpachlowanie ścian, sucha zabudowa GK, wykończenia wnętrz Trzebnica">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root {
+            --primary-blue: #0d6efd;
+            --secondary-blue: #0b5ed7;
+            --light-blue: #3d8bfd;
+            --dark-blue: #0a58ca;
+            --accent-blue: #0c7cd5;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .navbar.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+        }
+        .nav-link {
+            color: var(--dark-blue) !important;
+            font-weight: 500;
+            position: relative;
+            margin: 0 10px;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: var(--accent-blue);
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+            left: 0;
+        }
+        .hero-section {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(13, 110, 253, 0.8), rgba(11, 94, 215, 0.9)), url('https://images.unsplash.com/photo-1596444450187-fc12e3b0b9f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeInDown 1s ease;
+        }
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+        .btn-primary-custom {
+            background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue));
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(13, 110, 253, 0.4);
+        }
+        .btn-primary-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(13, 110, 253, 0.6);
+            background: linear-gradient(to right, var(--secondary-blue), var(--primary-blue));
+        }
+        .section-padding {
+            padding: 100px 0;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            position: relative;
+            text-align: center;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-blue), var(--light-blue));
+            border-radius: 2px;
+        }
+        .card-custom {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: 100%;
+        }
+        .card-custom:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(13, 110, 253, 0.2);
+        }
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .card-custom:hover .card-img-top {
+            transform: scale(1.05);
+        }
+        .about-section {
+            background: linear-gradient(to bottom, #f8f9ff, #e9ecef);
+        }
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 10px 20px rgba(13, 110, 253, 0.3);
+        }
+        .counter-section {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+        }
+        .counter-item {
+            text-align: center;
+            padding: 20px;
+        }
+        .counter-number {
+            font-size: 3rem;
+            font-weight: 700;
+            display: block;
+        }
+        .counter-label {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .services-section {
+            background-color: #f8f9ff;
+        }
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: none;
+            margin: 20px 0;
+        }
+        .footer {
+            background: linear-gradient(135deg, #0a2c5a, #0d6efd);
+            color: white;
+            padding: 70px 0 20px;
+        }
+        .footer a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer a:hover {
+            color: white;
+        }
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+        .social-icon:hover {
+            background: var(--primary-blue);
+            transform: translateY(-5px);
+        }
+        .sticky-footer {
+            background: #0a2c5a;
+            color: white;
+            padding: 15px 0;
+        }
+        .slogan-banner {
+            background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Slogan Banner -->
+    <div class="slogan-banner">
+        Precision, Perfection, Professional
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-paint-roller me-2"></i>Malarz Trzebnica
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Strona Główna</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="oferta.html">Oferta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="galeria.html">Galeria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kontakt.html">Kontakt</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="#" class="social-icon me-2">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon me-2">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title">Profesjonalne Usługi Malarskie w Trzebnicy</h1>
+            <p class="hero-subtitle">Malowanie wnętrz i elewacji, szpachlowanie, sucha zabudowa GK i kompletne wykończenia wnętrz</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="kontakt.html" class="btn btn-primary-custom btn-lg">
+                    <i class="fas fa-phone me-2"></i>Zadzwoń: +48 452 690 824
+                </a>
+                <a href="oferta.html" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-info-circle me-2"></i>Poznaj Ofertę
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h2 class="section-title">O Naszej Firmie</h2>
+                    <p class="lead">Witamy na stronie <strong>Malarz Trzebnica</strong> – firmy specjalizującej się w kompleksowych usługach malarskich i wykończeniowych na terenie Trzebnicy i okolic. Naszym celem jest tworzenie estetycznych, trwałych i funkcjonalnych przestrzeni, które spełniają najwyższe standardy jakości.</p>
+                    <p>Posiadamy wieloletnie doświadczenie w realizacji prac malarskich i wykończeniowych – zarówno w nowych inwestycjach, jak i podczas remontów oraz odświeżania wnętrz. Pracujemy wyłącznie na profesjonalnym i nowoczesnym sprzęcie, wykorzystując sprawdzone technologie oraz wysokiej jakości materiały.</p>
+                    <p>Świadczymy szeroko pojęte usługi wykończeniowe. Naszą najmocniejszą stroną są usługi malarskie wewnątrz i na zewnątrz pomieszczeń, szpachlowanie ścian, sucha zabudowa GK. W naszej ofercie są również inne usługi wykończeniowe takie jak: układanie podłóg (panele podłogowe i wykładziny), układanie glazury na podłogach i ścianach, drobne elementy wykończenia wnętrz. Dysponujemy profesjonalnym i nowoczesnym sprzętem do wykonywania naszych usług.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="card-custom h-100">
+                                <img src="https://images.unsplash.com/photo-1581578021424-eb57b938b30a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Malowanie ścian">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Malowanie</h5>
+                                    <p class="card-text">Profesjonalne malowanie wnętrz i elewacji</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card-custom h-100">
+                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Szpachlowanie">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Szpachlowanie</h5>
+                                    <p class="card-text">Wyrównywanie ścian i gładzi gipsowe</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4 mb-md-0">
+                            <div class="card-custom h-100">
+                                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Sucha zabudowa">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Sucha Zabudowa</h5>
+                                    <p class="card-text">Sufity podwieszane i ścianki GK</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-custom h-100">
+                                <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Wykończenia">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Wykończenia</h5>
+                                    <p class="card-text">Kompleksowe wykończenia wnętrz</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section-padding" style="background-color: white;">
+        <div class="container">
+            <h2 class="section-title">Dlaczego Warto Wybrać Naszą Firmę?</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h4>Lokalna Firma</h4>
+                        <p>Działamy lokalnie w Trzebnicy i okolicach, co pozwala nam zapewnić szybki dojazd i terminowość realizacji zadań.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h4>Nowoczesny Sprzęt</h4>
+                        <p>Używamy profesjonalnego i nowoczesnego sprzętu, który pozwala na uzyskanie najwyższej jakości efektów.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>Doświadczenie</h4>
+                        <p>Nasze doświadczenie i profesjonalizm są gwarantem jakości oraz terminowości realizacji zleceń.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section section-padding">
+        <div class="container">
+            <h2 class="section-title">Nasze Usługi</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card-custom">
+                        <img src="https://images.unsplash.com/photo-1581578021424-eb57b938b30a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Malowanie wnętrz">
+                        <div class="card-body">
+                            <h5 class="card-title">Malowanie wnętrz</h5>
+                            <p class="card-text">Profesjonalne malowanie ścian i sufitów w mieszkaniach, domach i biurach. Stosujemy farby lateksowe, akrylowe i specjalistyczne.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card-custom">
+                        <img src="https://images.unsplash.com/photo-1596444450187-fc12e3b0b9f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Malowanie elewacji">
+                        <div class="card-body">
+                            <h5 class="card-title">Malowanie elewacji</h5>
+                            <p class="card-text">Malowanie elewacji budynków mieszkalnych i komercyjnych z wykorzystaniem farb elewacyjnych ochronnych.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card-custom">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Szpachlowanie">
+                        <div class="card-body">
+                            <h5 class="card-title">Szpachlowanie ścian</h5>
+                            <p class="card-text">Wyrównywanie ścian i sufitów, przygotowanie powierzchni pod dalsze prace wykończeniowe.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card-custom">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Sucha zabudowa">
+                        <div class="card-body">
+                            <h5 class="card-title">Sucha zabudowa GK</h5>
+                            <p class="card-text">Sufity podwieszane, ścianki działowe, zabudowy wnęk i instalacji z płyt GK.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card-custom">
+                        <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Układanie podłóg">
+                        <div class="card-body">
+                            <h5 class="card-title">Układanie podłóg</h5>
+                            <p class="card-text">Montaż paneli podłogowych i wykładzin z dbałością o detale i estetyczne wykończenia.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card-custom">
+                        <img src="https://images.unsplash.com/photo-1596561182583-6d6e8096e37b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Układanie glazury">
+                        <div class="card-body">
+                            <h5 class="card-title">Układanie glazury</h5>
+                            <p class="card-text">Profesjonalne układanie glazury na ścianach i podłogach w łazienkach i kuchniach.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Counter Section -->
+    <section class="counter-section section-padding">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <div class="counter-item">
+                        <span class="counter-number" data-count="150">0</span>
+                        <span class="counter-label">Zakończonych projektów</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <div class="counter-item">
+                        <span class="counter-number" data-count="12">0</span>
+                        <span class="counter-label">Lat doświadczenia</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <div class="counter-item">
+                        <span class="counter-number" data-count="98">0</span>
+                        <span class="counter-label">Zadowolonych klientów (%)</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="counter-item">
+                        <span class="counter-number" data-count="24">0</span>
+                        <span class="counter-label">Godzinny kontakt</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section-padding" style="background-color: #f8f9ff;">
+        <div class="container">
+            <h2 class="section-title">Opinie Klientów</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <p class="mb-3">Firma zrealizowała malowanie mojego mieszkania w bardzo krótkim czasie. Efekt końcowy przekroczył moje oczekiwania. Pracownicy byli profesjonalni i uprzejmi.</p>
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-user-circle fa-2x text-primary"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h6 class="mb-0">Anna Kowalska</h6>
+                                <small>Trzebnica</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <p class="mb-3">Zespół zajął się kompleksowym wykończeniem mojego domu. Szpachlowanie, malowanie, sucha zabudowa - wszystko wykonane perfekcyjnie.</p>
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-user-circle fa-2x text-primary"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h6 class="mb-0">Piotr Nowak</h6>
+                                <small>Trzebnica</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <p class="mb-3">Malowanie elewacji naszej firmy zostało wykonane w sezonie deszczowym, ale mimo to efekt jest doskonały. Pracownicy byli bardzo sumienni.</p>
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-user-circle fa-2x text-primary"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h6 class="mb-0">Maria Wiśniewska</h6>
+                                <small>Trzebnica</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-padding" style="background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue)); color: white;">
+        <div class="container text-center">
+            <h2 class="section-title text-white">Zainteresowany Naszą Ofertą?</h2>
+            <p class="lead mb-4">Skontaktuj się z nami i poznaj szczegóły oferty. Z przyjemnością doradzimy najlepsze rozwiązania i przygotujemy indywidualną wycenę.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="tel:+48452690824" class="btn btn-light btn-lg">
+                    <i class="fas fa-phone me-2"></i>+48 452 690 824
+                </a>
+                <a href="kontakt.html" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-envelope me-2"></i>Formularz kontaktowy
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h5 class="mb-4">Malarz Trzebnica</h5>
+                    <p>Profesjonalne usługi malarskie i wykończeniowe w Trzebnicy i okolicach. Malowanie wnętrz i elewacji, szpachlowanie, sucha zabudowa GK.</p>
+                    <div class="mt-4">
+                        <a href="#" class="social-icon me-2">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon me-2">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-5 mb-md-0">
+                    <h5 class="mb-4">Linki</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html">Strona Główna</a></li>
+                        <li class="mb-2"><a href="oferta.html">Oferta</a></li>
+                        <li class="mb-2"><a href="galeria.html">Galeria</a></li>
+                        <li class="mb-2"><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                    <h5 class="mb-4">Kontakt</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i>+48 452 690 824</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i>info@malarz.trzebnica.pl</li>
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i>Trzebnica i okolice</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">Godziny otwarcia</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">Poniedziałek - Piątek</li>
+                        <li class="mb-2">8:00 - 18:00</li>
+                        <li class="mb-2">Sobota</li>
+                        <li class="mb-2">9:00 - 14:00</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="sticky-footer mt-5">
+            <div class="container text-center">
+                <p class="mb-0">&copy; 2026 Malarz Trzebnica. Wszystkie prawa zastrzeżone. | Precision, Perfection, Professional</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js" integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Counter animation
+        const counters = document.querySelectorAll('.counter-number');
+        const speed = 200;
+
+        const animateCounter = (el) => {
+            const count = parseInt(el.getAttribute('data-count'));
+            const initial = parseInt(el.innerText);
+            const increment = count / speed;
+            let current = initial;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if(current < count) {
+                    el.innerText = Math.ceil(current);
+                } else {
+                    clearInterval(timer);
+                    el.innerText = count;
+                }
+            }, 20);
+        };
+
+        // Intersection Observer for counter animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    const counter = entry.target.querySelector('.counter-number');
+                    if(counter) {
+                        animateCounter(counter);
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        document.querySelectorAll('.counter-item').forEach(item => {
+            observer.observe(item);
+        });
+
+        // Initialize counters when page loads
+        window.addEventListener('load', () => {
+            counters.forEach(counter => {
+                if(counter.getBoundingClientRect().top < window.innerHeight) {
+                    animateCounter(counter);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
