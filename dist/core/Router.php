@@ -73,10 +73,23 @@ class Router
         echo "404 - Strona nie znaleziona";
     }
     
-    private function matchPath(string $routePath, string $requestPath): bool
-    {
-        return $routePath === $requestPath;
+private function matchPath(string $routePath, string $requestPath): bool
+{
+    // Convert route parameters like {id} to regex patterns
+    $pattern = preg_replace('/\{([a-zA-Z_][a-zA-Z0-9_]*)\}/', '(?P<$1>[^/]+)', $routePath);
+    $pattern = '#^' . $pattern . '$#';
+    
+    if (preg_match($pattern, $requestPath, $matches)) {
+        // Store dynamic parameters in $_GET for controller access
+        foreach ($matches as $key => $value) {
+            if (!is_numeric($key)) {
+                $_GET[$key] = $value;
+            }
+        }
+        return true;
     }
+    return false;
+}
     
     private function callHandler(string $handler): void
     {
