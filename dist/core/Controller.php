@@ -28,7 +28,6 @@ abstract class Controller
         http_response_code($statusCode);
         header('Content-Type: application/json');
         echo json_encode($data);
-        exit;
     }
     
     protected function redirect(string $url): void
