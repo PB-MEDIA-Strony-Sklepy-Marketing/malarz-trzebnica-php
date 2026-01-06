@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Profesjonalne usługi malarskie i wykończeniowe w Trzebnicy | Malarz Trzebnica</title>
+    <meta name="description" content="Skontaktuj się z nami - profesjonalnym malarzem z Trzebnicy. Oferta: malowanie wnętrz i elewacji, szpachlowanie, sucha zabudowa GK. Telefon: +48 452 690 824">
+    <meta name="keywords" content="kontakt malarz Trzebnica, malarz Trzebnica, usługi malarskie Trzebnica, malowanie wnętrz Trzebnica, malowanie elewacji Trzebnica, szpachlowanie Trzebnica, sucha zabudowa GK Trzebnica">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contact-map {
+            height: 400px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        .form-control, .form-select {
+            border-radius: 10px;
+            border: 2px solid var(--light-gray);
+            padding: 12px 15px;
+            transition: var(--transition);
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--light-gray);
+            padding: 1.5rem 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-question {
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            margin-top: 1rem;
+            display: none;
+        }
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        .contact-info-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(13, 110, 253, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+        }
+        .contact-info-content h5 {
+            margin-bottom: 0.25rem;
+        }
+        .contact-info-content p {
+            margin: 0;
+            color: var(--gray);
+        }
+        @media (max-width: 768px) {
+            .contact-map {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Slogan Banner -->
+    <div class="slogan-banner">
+        Precision, Perfection, Professional
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-paint-roller me-2"></i>Malarz Trzebnica
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Strona Główna</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="oferta.html">Oferta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="galeria.html">Galeria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="kontakt.html">Kontakt</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="#" class="social-icon me-2">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon me-2">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="bg-light py-3">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Strona Główna</a></li>
+                    <li class="breadcrumb-item active">Kontakt</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title">Skontaktuj się z Nami</h1>
+            <p class="hero-subtitle">Malarz Trzebnica - Twoje dane kontaktowe i formularz kontaktowy</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Dane Kontaktowe</h2>
+            <div class="row">
+                <div class="col-lg-8 mb-5 mb-lg-0">
+                    <div class="contact-form">
+                        <h3 class="mb-4">Formularz Kontaktowy</h3>
+                        <p class="mb-4">Jeśli chcesz uzyskać bezpłatną i niezobowiązującą wycenę lub uzyskać fachową poradę techniczną, wypełnij poniższy formularz. Odpowiemy szybko i konkretnie.</p>
+                        
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="form-label">Imię i nazwisko</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Wpisz swoje imię i nazwisko" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Wpisz swój adres email" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="phone" class="form-label">Telefon</label>
+                                    <input type="tel" class="form-control" id="phone" placeholder="Wpisz numer telefonu" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="service" class="form-label">Rodzaj usługi</label>
+                                    <select class="form-select" id="service" required>
+                                        <option value="" disabled selected>Wybierz usługę</option>
+                                        <option value="malowanie-wnetrz">Malowanie wnętrz</option>
+                                        <option value="malowanie-elewacji">Malowanie elewacji</option>
+                                        <option value="szpachlowanie">Szpachlowanie ścian</option>
+                                        <option value="sucha-zabudowa">Sucha zabudowa GK</option>
+                                        <option value="ukladanie-podlog">Układanie podłóg</option>
+                                        <option value="ukladanie-glazury">Układanie glazury</option>
+                                        <option value="kompleksowe-wykonczenia">Kompleksowe wykończenia</option>
+                                        <option value="inne">Inne</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="message" class="form-label">Opis zlecenia</label>
+                                    <textarea class="form-control" id="message" rows="5" placeholder="Opisz zakres planowanych prac..." required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">Wyślij Wiadomość</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h5>Telefon</h5>
+                            <p>+48 452 690 824</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h5>Email</h5>
+                            <p>info@malarz.trzebnica.pl</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h5>Obszar działania</h5>
+                            <p>Trzebnica i okolice</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h5>Godziny pracy</h5>
+                            <p>Poniedziałek - Piątek: 8:00 - 18:00<br>Sobota: 9:00 - 14:00</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h5>Strona internetowa</h5>
+                            <p>www.malarz.trzebnica.pl</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section-padding" style="background-color: #f8f9ff;">
+        <div class="container">
+            <h2 class="section-title">Lokalizacja</h2>
+            <p class="text-center lead mb-5">Znajdź nas na mapie - działamy lokalnie w Trzebnicy i okolicach</p>
+            <div class="contact-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2493.7842085647!2d17.067238315754!3d51.3061604796194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fc274c78e4f3f%3A0x9a7c1a0b8d5e5f5!2sTrzebnica%2C%20Polska!5e0!3m2!1spl!2spl!4v1610000000000!5m2!1spl!2spl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Najczęściej Zadawane Pytania</h2>
+            <p class="text-center lead mb-5">Odpowiedzi na najczęściej zadawane pytania dotyczące współpracy z naszą firmą malarską w Trzebnicy</p>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Jak długo trwa realizacja zlecenia?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Czas realizacji zależy od zakresu prac i wielkości powierzchni do wykończenia. Malowanie mieszkania 3-pokojowego trwa zazwyczaj od 3 do 5 dni roboczych, podczas gdy malowanie elewacji może potrwać od 1 do 2 tygodni. Dokładny termin uzgadniamy indywidualnie po wizji lokalnej.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Czy oferujecie gwarancję na wykonane prace?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Tak, oferujemy gwarancję na wszystkie wykonane przez nas prace. Gwarancja trwa 24 miesiące od dnia zakończenia usług. W tym czasie podejmujemy się bezpłatnej naprawy ewentualnych wad lub uszkodzeń wynikających z nieprawidłowego wykonania usług.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Jakie materiały wykorzystujecie?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Wykorzystujemy wyłącznie materiały wysokiej jakości od sprawdzonych producentów. Dla prac malarskich stosujemy farby lateksowe, akrylowe i specjalistyczne od znanych marek. Wszystkie materiały są dobrane indywidualnie do rodzaju i stanu powierzchni, a także do wymagań klienta.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Czy potrzebna jest wizyta lokalna przed wyceną?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Wizyta lokalna pozwala na dokładne oszacowanie zakresu prac i przygotowanie precyzyjnej wyceny. W przypadku prostych usług, takich jak malowanie ścian w pomieszczeniach o standardowej wielkości, możemy przygotować wstępną wycenę na podstawie opisu i zdjęć. Ostateczna wycena jest zawsze przygotowywana po wizyty lokalnej.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Jakie są koszty usług?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Koszty usług zależą od wielu czynników: zakresu prac, powierzchni do wykończenia, stanu technicznego podłoża, rodzaju materiałów i trudności wykonania. Przygotowujemy indywidualne wyceny dla każdego zlecenia. Wszystkie ceny są uzgadniane i potwierdzane pisemnie przed rozpoczęciem prac.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-padding" style="background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue)); color: white;">
+        <div class="container text-center">
+            <h2 class="section-title text-white">Zainteresowany Naszą Ofertą?</h2>
+            <p class="lead mb-4">Skontaktuj się z nami i poznaj szczegóły oferty. Z przyjemnością doradzimy najlepsze rozwiązania i przygotujemy indywidualną wycenę.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="tel:+48452690824" class="btn btn-light btn-lg">
+                    <i class="fas fa-phone me-2"></i>+48 452 690 824
+                </a>
+                <a href="#contactForm" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-envelope me-2"></i>Formularz kontaktowy
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h5 class="mb-4">Malarz Trzebnica</h5>
+                    <p>Profesjonalne usługi malarskie i wykończeniowe w Trzebnicy i okolicach. Malowanie wnętrz i elewacji, szpachlowanie, sucha zabudowa GK.</p>
+                    <div class="mt-4">
+                        <a href="#" class="social-icon me-2">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon me-2">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-5 mb-md-0">
+                    <h5 class="mb-4">Linki</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html">Strona Główna</a></li>
+                        <li class="mb-2"><a href="oferta.html">Oferta</a></li>
+                        <li class="mb-2"><a href="galeria.html">Galeria</a></li>
+                        <li class="mb-2"><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                    <h5 class="mb-4">Kontakt</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i>+48 452 690 824</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i>info@malarz.trzebnica.pl</li>
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i>Trzebnica i okolice</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">Godziny otwarcia</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">Poniedziałek - Piątek</li>
+                        <li class="mb-2">8:00 - 18:00</li>
+                        <li class="mb-2">Sobota</li>
+                        <li class="mb-2">9:00 - 14:00</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="sticky-footer mt-5">
+            <div class="container text-center">
+                <p class="mb-0">&copy; 2026 Malarz Trzebnica. Wszystkie prawa zastrzeżone. | Precision, Perfection, Professional</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js" integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                } else {
+                    document.querySelectorAll('.faq-answer').forEach(item => {
+                        item.style.display = 'none';
+                    });
+                    document.querySelectorAll('.faq-question i').forEach(i => {
+                        i.classList.remove('fa-chevron-up');
+                        i.classList.add('fa-chevron-down');
+                    });
+                    
+                    answer.style.display = 'block';
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce.');
+            this.reset();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
