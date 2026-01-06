@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  web:
+    image: php:8.1-apache
+    container_name: malarz-trzebnica-web
+    ports:
+      - "8000:80"
+    volumes:
+      - ./dist:/var/www/html
+      - ./docker/php/php.ini:/usr/local/etc/php/php.ini
+    environment:
+      - APP_ENV=development
+      - APP_DEBUG=true
+    networks:
+      - malarz-network
+
+  # MySQL (opcjonalnie - jeśli używana baza danych)
+  # mysql:
+  #   image: mysql:8.0
+  #   container_name: malarz-trzebnica-mysql
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root
+  #     MYSQL_DATABASE: malarz_trzebnica
+  #   ports:
+  #     - "3306:3306"
+  #   volumes:
+  #     - mysql-data:/var/lib/mysql
+  #   networks:
+  #     - malarz-network
+
+  # PHPMyAdmin (opcjonalnie)
+  # phpmyadmin:
+  #   image: phpmyadmin:latest
+  #   container_name: malarz-trzebnica-phpmyadmin
+  #   environment:
+  #     PMA_HOST: mysql
+  #   ports:
+  #     - "8080:80"
+  #   networks:
+  #     - malarz-network
+  #   depends_on:
+  #     - mysql
+
+networks:
+  malarz-network:
+    driver: bridge
+
+# volumes:
+#   mysql-data:
