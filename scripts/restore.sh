@@ -13,7 +13,7 @@ RESTORE_DIR="/var/www/malarz-trzebnica-php"
 echo "Starting restore from $BACKUP_FILE"
 
 # Extract backup
-tar -xzf "$BACKUP_FILE" -C /
+tar -xzf "$BACKUP_FILE" -C "$RESTORE_DIR"
 
 echo "Files restored successfully"
 echo "Please check configuration files (.env, config.php)"
