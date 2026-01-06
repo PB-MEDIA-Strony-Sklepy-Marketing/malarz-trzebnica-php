@@ -33,7 +33,7 @@ fi
 
 # Run tests
 echo "🧪 Running tests..."
-composer test || echo "⚠️  Some tests failed, but continuing..."
+composer test
 
 # Deploy via rsync (preferred) or FTP
 echo "📤 Deploying files..."
